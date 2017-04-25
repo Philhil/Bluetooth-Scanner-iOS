@@ -1,30 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9E3-eZ-0Px">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9E3-eZ-0Px">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Scanned Devices-->
         <scene sceneID="5bz-St-4lY">
             <objects>
-                <tableViewController id="HNZ-Tq-SaB" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QIW-hz-jWW">
+                <tableViewController id="HNZ-Tq-SaB" customClass="ScanTableViewController" customModule="Bluetooth_Scanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" id="QIW-hz-jWW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pHb-n8-bpC">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScanTableViewCell" rowHeight="86" id="pHb-n8-bpC" customClass="ScanTableViewCell" customModule="Bluetooth_Scanner" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pHb-n8-bpC" id="Vkh-N2-eIx">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Na7-d3-0qL" userLabel="LabelId">
+                                            <rect key="frame" x="8" y="10" width="304" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eq-e5-c6h" userLabel="LabelName">
+                                            <rect key="frame" x="16" y="39" width="214" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSSI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrG-wd-jZK" userLabel="LabelRSSI">
+                                            <rect key="frame" x="238" y="39" width="74" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Na7-d3-0qL" firstAttribute="leading" secondItem="Vkh-N2-eIx" secondAttribute="leading" constant="8" id="1NO-M9-Pqj"/>
+                                        <constraint firstItem="qrG-wd-jZK" firstAttribute="leading" secondItem="5eq-e5-c6h" secondAttribute="leading" constant="222" id="PDX-1y-YcG"/>
+                                        <constraint firstItem="5eq-e5-c6h" firstAttribute="top" secondItem="Na7-d3-0qL" secondAttribute="top" constant="29" id="Uhi-d0-J2P"/>
+                                        <constraint firstItem="Na7-d3-0qL" firstAttribute="top" secondItem="Vkh-N2-eIx" secondAttribute="top" constant="10" id="eSF-hh-egn"/>
+                                        <constraint firstAttribute="trailing" secondItem="qrG-wd-jZK" secondAttribute="trailing" constant="8" id="mUL-TF-S75"/>
+                                        <constraint firstItem="5eq-e5-c6h" firstAttribute="leading" secondItem="Vkh-N2-eIx" secondAttribute="leadingMargin" constant="8" id="n9v-bb-N6Q"/>
+                                        <constraint firstAttribute="trailing" secondItem="Na7-d3-0qL" secondAttribute="trailing" constant="8" id="saB-ic-7k0"/>
+                                        <constraint firstItem="qrG-wd-jZK" firstAttribute="top" secondItem="Vkh-N2-eIx" secondAttribute="topMargin" constant="31" id="uEZ-b2-jg8"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="LabelId" destination="Na7-d3-0qL" id="Qys-Fd-AyL"/>
+                                    <outlet property="LabelName" destination="5eq-e5-c6h" id="vCK-bO-EKS"/>
+                                    <outlet property="LabelRSSI" destination="qrG-wd-jZK" id="jhj-wt-jok"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -32,11 +68,11 @@
                             <outlet property="delegate" destination="HNZ-Tq-SaB" id="uTg-Cl-Lw4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="c6U-1k-8yb"/>
+                    <navigationItem key="navigationItem" title="Scanned Devices" id="c6U-1k-8yb"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gv-K9-Bsx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1406" y="199"/>
+            <point key="canvasLocation" x="1404.375" y="198.59154929577466"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xQa-mj-LRt">

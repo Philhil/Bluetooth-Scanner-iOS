@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8402822A1EAE5DDC00B03BC9 /* BTDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840282291EAE5DDC00B03BC9 /* BTDevice.swift */; };
 		8412CF601E9BDD680071F13D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412CF5F1E9BDD680071F13D /* AppDelegate.swift */; };
-		8412CF621E9BDD680071F13D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412CF611E9BDD680071F13D /* ViewController.swift */; };
+		8412CF621E9BDD680071F13D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412CF611E9BDD680071F13D /* MainViewController.swift */; };
 		8412CF651E9BDD680071F13D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8412CF631E9BDD680071F13D /* Main.storyboard */; };
 		8412CF671E9BDD680071F13D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8412CF661E9BDD680071F13D /* Assets.xcassets */; };
 		8412CF6A1E9BDD680071F13D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8412CF681E9BDD680071F13D /* LaunchScreen.storyboard */; };
+		846640601E9BE185006AC43C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8466405F1E9BE185006AC43C /* CoreBluetooth.framework */; };
+		846640621E9BE1EA006AC43C /* ScanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846640611E9BE1EA006AC43C /* ScanTableViewController.swift */; };
+		846640641E9BE441006AC43C /* ScanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846640631E9BE441006AC43C /* ScanTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		840282291EAE5DDC00B03BC9 /* BTDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDevice.swift; sourceTree = "<group>"; };
 		8412CF5C1E9BDD680071F13D /* Bluetooth-Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bluetooth-Scanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8412CF5F1E9BDD680071F13D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8412CF611E9BDD680071F13D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8412CF611E9BDD680071F13D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8412CF641E9BDD680071F13D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8412CF661E9BDD680071F13D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8412CF691E9BDD680071F13D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8412CF6B1E9BDD680071F13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8466405F1E9BE185006AC43C /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		846640611E9BE1EA006AC43C /* ScanTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanTableViewController.swift; sourceTree = "<group>"; };
+		846640631E9BE441006AC43C /* ScanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846640601E9BE185006AC43C /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,7 @@
 			children = (
 				8412CF5E1E9BDD680071F13D /* Bluetooth-Scanner */,
 				8412CF5D1E9BDD680071F13D /* Products */,
+				8466405E1E9BE185006AC43C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +65,24 @@
 			isa = PBXGroup;
 			children = (
 				8412CF5F1E9BDD680071F13D /* AppDelegate.swift */,
-				8412CF611E9BDD680071F13D /* ViewController.swift */,
+				8412CF611E9BDD680071F13D /* MainViewController.swift */,
 				8412CF631E9BDD680071F13D /* Main.storyboard */,
 				8412CF661E9BDD680071F13D /* Assets.xcassets */,
 				8412CF681E9BDD680071F13D /* LaunchScreen.storyboard */,
 				8412CF6B1E9BDD680071F13D /* Info.plist */,
+				846640611E9BE1EA006AC43C /* ScanTableViewController.swift */,
+				846640631E9BE441006AC43C /* ScanTableViewCell.swift */,
+				840282291EAE5DDC00B03BC9 /* BTDevice.swift */,
 			);
 			path = "Bluetooth-Scanner";
+			sourceTree = "<group>";
+		};
+		8466405E1E9BE185006AC43C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8466405F1E9BE185006AC43C /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +158,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8412CF621E9BDD680071F13D /* ViewController.swift in Sources */,
+				8412CF621E9BDD680071F13D /* MainViewController.swift in Sources */,
+				8402822A1EAE5DDC00B03BC9 /* BTDevice.swift in Sources */,
 				8412CF601E9BDD680071F13D /* AppDelegate.swift in Sources */,
+				846640641E9BE441006AC43C /* ScanTableViewCell.swift in Sources */,
+				846640621E9BE1EA006AC43C /* ScanTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +324,7 @@
 				8412CF701E9BDD680071F13D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
