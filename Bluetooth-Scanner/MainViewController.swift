@@ -13,8 +13,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        //TODO: scan devices
     }
 
     override func didReceiveMemoryWarning() {

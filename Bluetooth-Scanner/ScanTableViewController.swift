@@ -9,7 +9,7 @@
 import UIKit
 import CoreBluetooth
 
-class ScanTableViewController: UITableViewController, CBCentralManagerDelegate {
+class ScanTableViewController: UITableViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     var devices:[BTDevice] = []
     var manager:CBCentralManager? = nil
@@ -50,7 +50,22 @@ class ScanTableViewController: UITableViewController, CBCentralManagerDelegate {
         
         return cell
     }
-
+    
+    //über storyboard
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as UIViewController
+        
+        let index = tableView.indexPathForSelectedRow?.row
+        
+        if (index != nil && manager != nil) {
+            let device = devices[index!].peripheral
+            device.delegate = controller as? CBPeripheralDelegate //TODO set delegate to seque tableview and show content if it arrives
+            manager?.connect(device, options: nil)
+            
+            //controller.loadData...
+        }
+    }
+    
     func stopScanBTDevices() {
         manager?.stopScan()
     }
@@ -60,12 +75,19 @@ class ScanTableViewController: UITableViewController, CBCentralManagerDelegate {
         device.readRSSI()
         
         if !devices.contains(where: { $0.uuid == device.identifier }) {
-            let newDevice = BTDevice(name: device.name, uuid: device.identifier, rssi: nil)
+            
+            let newDevice = BTDevice(peripheral: device, name: device.name, uuid: device.identifier, rssi: nil)
             devices.append(newDevice)
+            //central.connect(device, options: nil)
         }
         
         self.tableView.reloadData()
     }
+    
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        peripheral.discoverServices(nil)
+    }
+    
     
     func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?) {
         
@@ -75,28 +97,22 @@ class ScanTableViewController: UITableViewController, CBCentralManagerDelegate {
         
     }
     
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        if peripheral.services != nil {
+            print(peripheral.services?.first?.uuid.uuidString ?? "")
+        }
+    }
+    
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         
         switch central.state {
         case CBManagerState.poweredOn:
             //manager?.scanForPeripherals(withServices: [CBUUID.init(string: "DFB0")], options: nil)
             manager?.scanForPeripherals(withServices: nil, options: nil)
-
-            
-            
-            //scan only 40 seconds
-            
-            //Timer.scheduledTimer(timeInterval: 40.0, target: self, selector: #selector(self.stopScanBTDevices), userInfo: nil, repeats: false)
         default:
             ()
         }
 
-    }
-    
-    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-        
-        peripheral.discoverServices(nil)
-        
     }
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?){

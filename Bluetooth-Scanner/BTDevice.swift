@@ -7,15 +7,18 @@
 //
 
 import Foundation
+import CoreBluetooth
 
 class BTDevice {
     var name:String
     var uuid:UUID? = nil
     var rssi:NSNumber? = nil
+    var peripheral:CBPeripheral
     
-    public init(name:String?, uuid:UUID?, rssi:NSNumber?) {
+    public init(peripheral:CBPeripheral, name:String?, uuid:UUID?, rssi:NSNumber?) {
         self.name = name ?? ""
         self.uuid = uuid
         self.rssi = rssi
+        self.peripheral = peripheral
     }
 }
