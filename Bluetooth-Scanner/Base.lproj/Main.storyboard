@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9E3-eZ-0Px">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9E3-eZ-0Px">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -60,6 +60,7 @@
                                     <outlet property="LabelId" destination="Na7-d3-0qL" id="Qys-Fd-AyL"/>
                                     <outlet property="LabelName" destination="5eq-e5-c6h" id="vCK-bO-EKS"/>
                                     <outlet property="LabelRSSI" destination="qrG-wd-jZK" id="jhj-wt-jok"/>
+                                    <segue destination="TBm-oL-3wi" kind="show" id="cvE-5a-IRh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -73,6 +74,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gv-K9-Bsx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1404.375" y="198.59154929577466"/>
+        </scene>
+        <!--Detail Table View Controller-->
+        <scene sceneID="qxG-rg-3KZ">
+            <objects>
+                <tableViewController id="TBm-oL-3wi" customClass="DetailTableViewController" customModule="Bluetooth_Scanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="detailTable" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="HqT-73-cqn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="w7f-os-IzF">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w7f-os-IzF" id="GHt-tg-Vtz">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TBm-oL-3wi" id="ery-tW-Zfo"/>
+                            <outlet property="delegate" destination="TBm-oL-3wi" id="9Gd-az-y1y"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="detailTable" destination="HqT-73-cqn" id="kgB-Ag-TZD"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5pM-sD-JZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2484" y="199"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xQa-mj-LRt">

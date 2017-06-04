@@ -16,6 +16,7 @@
 		846640601E9BE185006AC43C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8466405F1E9BE185006AC43C /* CoreBluetooth.framework */; };
 		846640621E9BE1EA006AC43C /* ScanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846640611E9BE1EA006AC43C /* ScanTableViewController.swift */; };
 		846640641E9BE441006AC43C /* ScanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846640631E9BE441006AC43C /* ScanTableViewCell.swift */; };
+		84DA57C01ED5BE46000551A3 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA57BF1ED5BE46000551A3 /* DetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8466405F1E9BE185006AC43C /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		846640611E9BE1EA006AC43C /* ScanTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanTableViewController.swift; sourceTree = "<group>"; };
 		846640631E9BE441006AC43C /* ScanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanTableViewCell.swift; sourceTree = "<group>"; };
+		84DA57BF1ED5BE46000551A3 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				8412CF681E9BDD680071F13D /* LaunchScreen.storyboard */,
 				8412CF6B1E9BDD680071F13D /* Info.plist */,
 				846640611E9BE1EA006AC43C /* ScanTableViewController.swift */,
+				84DA57BF1ED5BE46000551A3 /* DetailTableViewController.swift */,
 				846640631E9BE441006AC43C /* ScanTableViewCell.swift */,
 				840282291EAE5DDC00B03BC9 /* BTDevice.swift */,
 			);
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DA57C01ED5BE46000551A3 /* DetailTableViewController.swift in Sources */,
 				8412CF621E9BDD680071F13D /* MainViewController.swift in Sources */,
 				8402822A1EAE5DDC00B03BC9 /* BTDevice.swift in Sources */,
 				8412CF601E9BDD680071F13D /* AppDelegate.swift in Sources */,
